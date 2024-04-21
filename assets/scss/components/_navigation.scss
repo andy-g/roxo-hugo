@@ -1,13 +1,20 @@
 .site-navigation{
+  &.navbar-dark {
+    background: $black;
+    .nav-item{
+      .nav-link{
+        color: $white;
+      } 
+    } 
+  }
   padding: 20px 0;
-  background: $black;
+  background: $white;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   @include desktop{
-    background: $black;
     margin: 10px;
     border-radius: 5px;
     top: 0;
@@ -30,7 +37,7 @@
     }
     .nav-link{
       font-family: $secondary-font;
-      color: $white;
+      color: $text-color-dark;
       transition: all .3s ease;
       padding: 15px 18px;
       position: relative;

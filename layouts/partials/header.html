@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg site-navigation">
+<nav class="navbar navbar-expand-lg site-navigation {{ if .Site.Params.nav_bar_dark }}navbar-dark{{ end }}">
   <div class="container">
     <a class="navbar-brand" href="{{ .Site.BaseURL }}">
       <img src="{{ .Site.Params.logo | absURL }}" alt="logo" />

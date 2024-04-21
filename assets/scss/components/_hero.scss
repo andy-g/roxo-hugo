@@ -7,13 +7,12 @@
   align-items: center;
   justify-content: center;
   @include desktop{
-    height: auto;
     padding: 200px 0;
   }
   @include mobile{
     padding: 150px 0;
   }
-  &-content{
+  &-dark &-content{
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     padding: 20px;
@@ -21,8 +20,12 @@
       color:white;
     }    
     h1{
-      margin-bottom: 75px;
       color:white;
+    }
+  }  
+  &-content{
+    h1{
+      margin-bottom: 75px;
       @include desktop-lg{
         font-size: 50px;
         margin-bottom: 50px;
