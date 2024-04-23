@@ -1,7 +1,14 @@
 {{ with .Site.Params.banner }}
   {{ if .enable }}
   {{ "<!-- Site Hero Start -->" | safeHTML }}
-  <section class="site-hero {{ if .hero_dark }}site-hero-dark{{ end }}" style="background-image: url('{{ .background_image }}');">
+  
+  {{ $filter := images.Process "webp" }}
+  {{ with resources.Get "images/backgrounds/hero-background.jpg" }}
+    {{ with images.Filter $filter . }}
+      <section class="site-hero {{ if $.Site.Params.banner.hero_dark }}site-hero-dark{{ end }}" style="background-image: url('{{ .RelPermalink }}');">
+    {{ end }}
+  {{ end }}
+  
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
