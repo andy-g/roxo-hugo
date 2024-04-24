@@ -2,9 +2,8 @@
   {{ if .enable }}
   {{ "<!-- Site Hero Start -->" | safeHTML }}
   
-  {{ $filter := images.Process "webp" }}
-  {{ with resources.Get "images/backgrounds/hero-background.jpg" }}
-    {{ with images.Filter $filter . }}
+  {{ with resources.Get ( .background_image ) }}
+    {{ with .Resize "3000x webp" }}
       <section class="site-hero {{ if $.Site.Params.banner.hero_dark }}site-hero-dark{{ end }}" style="background-image: url('{{ .RelPermalink }}');">
     {{ end }}
   {{ end }}
