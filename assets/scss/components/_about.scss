@@ -1,9 +1,9 @@
 .site-about{
   &-header{
-    padding-top: 80px;
+    padding-top: 120px;
     background-color: $gray;
     @include mobile{
-      padding-top: 60px;
+      padding-top: 88px;
       text-align: center;
     }
   }

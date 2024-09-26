@@ -1,7 +1,13 @@
 {{ with .Site.Params.banner }}
   {{ if .enable }}
   {{ "<!-- Site Hero Start -->" | safeHTML }}
-  <section class="site-hero" style="background-image: url('{{ .background_image }}');">
+  
+  {{ with resources.Get ( .background_image ) }}
+    {{ with .Resize "3000x webp" }}
+      <section class="site-hero {{ if $.Site.Params.banner.hero_dark }}site-hero-dark{{ end }}" style="background-image: url('{{ .RelPermalink }}');">
+    {{ end }}
+  {{ end }}
+  
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -35,7 +41,7 @@
       </div>
     </div>
     <a href="#counter" class="site-hero-scroll scroll-to">
-      <img src="{{ "images/arrow-down.svg" | absURL }}" alt="arrow-down">
+      <img src="{{ "images/arrow-down-white.svg" | absURL }}" alt="arrow-down">
     </a>
   </section>
   {{ "<!-- Site Hero End -->" | safeHTML }}

@@ -41,6 +41,9 @@
         display: inline-block;
         a{
           color: $text-color-dark;
+          height: 16px;
+          width: 16px;
+          display: block;
         }
         &:not(:last-child){
           margin-right: 10px;

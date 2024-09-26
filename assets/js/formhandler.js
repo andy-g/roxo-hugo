@@ -1,11 +1,11 @@
 window.addEventListener("DOMContentLoaded", function() {    
-  var form = document.getElementById("contact-form");
-  var button = document.getElementById("contact-form-button");
-  var status = document.getElementById("contact-form-status");
+  var form = document?.getElementById("contact-form");
+  var button = document?.getElementById("contact-form-button");
+  var status = document?.getElementById("contact-form-status");
 
   function success() {
     form.reset();
-    button.style = "display: none ";
+    // button.style = "display: none ";
     status.innerHTML = "Thanks! Contact form is submitted successfully.";
   }
 
@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
   // handle the form submission event
 
-  form.addEventListener("submit", function(ev) {
+  form?.addEventListener("submit", function(ev) {
     ev.preventDefault();
     var data = new FormData(form);
     ajax(form.method, form.action, data, success, error);

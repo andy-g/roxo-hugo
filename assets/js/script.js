@@ -1,35 +1,46 @@
-$(document).ready(function() {
+// document.addEventListener("DOMContentLoaded", function () {
+
+let handler = function() {
   "use strict";
   // Scroll to top
-  $("a[href='#top']").click(function() {
-    $("html, body").animate({ scrollTop: 0 }, "slow");
+  document.querySelector("a[href='#top']")?.addEventListener("click", function () {
+    document.querySelector("html, body").animate({ scrollTop: 0 }, {duration: 600});
     return false;
   });
 
-  // Smooth scroll
-  $('a.scroll-to').on('click', function (event) {
-    var $anchor = $(this);
-    $('html, body').stop().animate({
-        scrollTop: ($($anchor.attr('href')).offset().top - 50)
-    }, 700);
+  // Smooth scroll down to target 
+  document.querySelector("a.scroll-to")?.addEventListener("click", function (event) {
+    scrollTop: document.querySelector(event.currentTarget.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
     event.preventDefault();
   });
 
-  $('.site-testimonial-item').on('mouseenter', function(){
-    $('.site-testimonial-item').addClass('inactive');
-    $(this).removeClass('inactive').addClass('active');
-  });
-  $('.site-testimonial-item').on('mouseleave', function(){
-    $('.site-testimonial-item').removeClass('inactive');
-    $('.site-testimonial-item').removeClass('active');
-  });
-});
+  // Focus on active testimonial
+  document
+    .querySelectorAll(".site-testimonial-item").forEach((item) =>
+      item.addEventListener("mouseenter", function () {
+        document.querySelectorAll(".site-testimonial-item").forEach((item) => item.classList.add("inactive"));
+        this.classList.replace("inactive", "active");
+      })
+    );
+  document
+    .querySelectorAll(".site-testimonial-item").forEach((item) => 
+      item.addEventListener("mouseleave", function () {
+        document.querySelectorAll(".site-testimonial-item").forEach((item) => item.classList.remove("inactive", "active"));
+      })
+    );
+};
 
-$(window).on('scroll', function () {
-  var windscroll = $(window).scrollTop();
-  if (windscroll >= 100) {
-    $('.site-navigation').addClass('nav-bg');
+// Reduce navbar height when scrolling down
+document.addEventListener("scroll", function () {
+  if (window.scrollY >= 100) {
+    document.querySelector(".site-navigation").classList.add("nav-bg");
   } else {
-    $('.site-navigation').removeClass('nav-bg');
+    document.querySelector(".site-navigation").classList.remove("nav-bg");
   }
 });
+
+if(document.readyState === 'complete' || (document.readyState !== 'loading')) {
+  handler()
+} else {
+  document.addEventListener('DOMContentLoaded', handler);
+}
