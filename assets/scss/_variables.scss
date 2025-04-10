@@ -1,17 +1,69 @@
 //site color variables
-$body-color: #fff;
-$primary-color: hsl(359, 60%, 70%);
-$secondary-color: hsl(174, 33%, 70%);
-$text-color: #9D9EA5;
-$text-color-dark: #00113E;
+$body-color: #f4f3ef;
+// $body-color: rgb(1, 43, 40);
+
+// Original pink primary, light blue secondary
+// $primary-color: hsl(359, 60%, 70%);
+// $secondary-color: hsl(174, 33%, 70%);
+
+// Beige bar, yellow secondary, dark blue primary
+// $primary-color: hsl(211, 29%, 30%);
+// $secondary-color: rgb(243, 179, 64);
+
+$primary-color: rgb(243, 179, 64);
+$secondary-color: hsl(211, 29%, 30%);
+
+
+// $primary-color: hsl(20, 79%, 54%);
+// $primary-color: rgb(243, 179, 64);;
+// // $primary-color: rgb(235, 180, 44);
+// $secondary-color: hsl(211, 29%, 30%);
+
+
+
+// $primary-color: rgb(235, 180, 44);
+
+
+// $text-color: #9D9EA5;
+// $text-color: rgb(244, 243, 239);
+$text-color: hsl(211, 29%, 30%);
+// $text-color-dark: #00113E;
+$text-color-dark: rgb(54, 76, 99);
 $site-ease: cubic-bezier(0.36, 0.03, 0, 0.91);
 $gray: #F7F9FF;
 $dark-gray: #646569;
 
 // solid colors
-$white: #fff;
-$black: #000;
+$white: #f4f3ef;
+// $white: rgb(1, 43, 40);
+
+// $black: #000;
+$black: #012b28;
 
 // Font Variables
 $primary-font: 'Josefin Sans', sans-serif;
 $secondary-font: 'Montserrat', sans-serif;
+
+
+
+// toy box
+$one: rgb(54, 76, 99);
+$two: rgb(230, 106, 44);
+$three: rgb(233, 227, 215);
+$four: rgb(243, 179, 64);
+$five: rgb(244, 243, 239);
+
+// deep emerald
+$one: rgb(1, 43, 40);
+$two: rgb(46, 98, 94);
+$three: rgb(180, 112, 73);
+$four: rgb(231, 36, 14);
+$five: rgb(235, 180, 44);
+
+// electric sunshine
+$one: rgb(59, 59, 59);
+$two: rgb(123, 121, 121);
+$three: rgb(239, 128, 47);
+$four: rgb(247, 247, 247);
+$five: rgb(255, 204, 87);
+
