@@ -13,7 +13,7 @@
     padding: 150px 0;
   }
   &-dark &-content{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     padding: 20px;
     h6{
@@ -25,7 +25,6 @@
   }  
   &-content{
     h1{
-      margin-bottom: 75px;
       @include desktop-lg{
         font-size: 50px;
         margin-bottom: 50px;
@@ -35,7 +34,7 @@
       }
     }
     &-buttons{
-      margin: 0;
+      margin: 75px 0 0 0;
       padding: 0;
       li{
         display: inline-block;
@@ -62,7 +61,12 @@
   }
   &-scroll{
     position: absolute;
-    left: 50%; bottom: 70px;
+    left: 50%; bottom: 90px;
     transform: translateX(-50%);
+    font-size: 40px;
+    color: white;
+    &:hover{
+      color: darken($color: white, $amount: 5);
+    }
   }
 }

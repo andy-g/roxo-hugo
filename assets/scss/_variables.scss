@@ -10,8 +10,9 @@ $body-color: #f4f3ef;
 // $primary-color: hsl(211, 29%, 30%);
 // $secondary-color: rgb(243, 179, 64);
 
-$primary-color: rgb(243, 179, 64);
-$secondary-color: hsl(211, 29%, 30%);
+// $primary-color: rgb(243, 179, 64);
+$primary-color: #e66a2cff;
+$secondary-color: rgb(54, 76, 99);
 
 
 // $primary-color: hsl(20, 79%, 54%);
@@ -26,11 +27,12 @@ $secondary-color: hsl(211, 29%, 30%);
 
 // $text-color: #9D9EA5;
 // $text-color: rgb(244, 243, 239);
-$text-color: hsl(211, 29%, 30%);
+$text-color: rgb(54, 76, 99);
 // $text-color-dark: #00113E;
 $text-color-dark: rgb(54, 76, 99);
 $site-ease: cubic-bezier(0.36, 0.03, 0, 0.91);
-$gray: #F7F9FF;
+// $gray: #F7F9FF;
+$gray: #f4f3efff;
 $dark-gray: #646569;
 
 // solid colors
@@ -38,7 +40,7 @@ $white: #f4f3ef;
 // $white: rgb(1, 43, 40);
 
 // $black: #000;
-$black: #012b28;
+$black: #000000;
 
 // Font Variables
 $primary-font: 'Josefin Sans', sans-serif;

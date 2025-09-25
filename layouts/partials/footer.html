@@ -1,48 +1,48 @@
 <footer class="site-footer">
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <div class="site-footer-logo"><a href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.logo_footer | absURL }}" alt="logo-footer"></a></div>
-      </div>
+      <!-- <div class="col-12">
+        <div class="site-footer-logo"><a href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.logo_footer | relURL }}" alt="logo-footer"></a></div>
+      </div> -->
       {{ with .Site.Params.footer.contactInfo }}
       <div class="col-lg-3 col-md-6">
         <div class="site-footer-widget">
-          <h5 class="site-footer-widget-title">{{ .title }}</h5>
+          <h3 class="site-footer-widget-title">{{ .title }}</h3>
           <p class="site-footer-widget-description">
-	    {{ if .address }}
-              {{ .address | safeHTML }}
-	      <br>
-	    {{ end }}
-	    {{ if .phone }}
-              <a href="tel:{{ .phone }}">{{ .phone }}</a>
-              <br>
-	    {{ end }}
-	    {{ if .email }}
-              <a href="mailto:{{ .email }}">{{ .email }}</a>
-	    {{ end }}
+            {{ if .address }}
+            {{ .address | safeHTML }}
+            <br>
+            {{ end }}
+            {{ if .phone }}
+            Tel: <a href="tel:{{ .phone }}">{{ .phone }}</a>
+            <br>
+            {{ end }}
+            {{ if .email }}
+            Email: <a href="mailto:{{ .email }}">{{ .email }}</a>
+            {{ end }}
           </p>
         </div>
       </div>
       {{ end }}
-      {{ with .Site.Params.footer.sitemap }}
+      <!-- {{ with .Site.Params.footer.sitemap }}
       <div class="col-lg-2 col-md-6">
         <div class="site-footer-widget">
           <h5 class="site-footer-widget-title">{{ .title }}</h5>
           <ul class="site-footer-widget-links">
             {{ range .link }}
-            <li><a href="{{ .url | absURL }}">{{ .name }}</a></li>
+            <li><a href="{{ .url | relURL }}">{{ .name }}</a></li>
             {{ end }}
           </ul>
         </div>
       </div>
-      {{ end }}
+      {{ end }} -->
       {{ with .Site.Params.footer.social }}
-      <div class="col-lg-2 col-md-6">
+      <div class="col-lg-3 col-md-6">
         <div class="site-footer-widget">
-          <h5 class="site-footer-widget-title">{{ .title }}</h5>
+          <p class="site-footer-widget-title">{{ .title }}</p>
           <ul class="site-footer-widget-links">
             {{ range .link }}
-              <li><a href="{{ .url }}">{{ .name }}</a></li>
+            <li><a href="{{ .url }}" target="_blank"><i class="bi bi-linkedin"></i> {{ .name }}</a></li>
             {{ end }}
           </ul>
         </div>
@@ -51,18 +51,18 @@
       {{ with .Site.Params.footer.service }}
       <div class="col-lg-3 col-md-6">
         <div class="site-footer-widget">
-          <h5 class="site-footer-widget-title">{{ .title }}</h5>
+          <p class="site-footer-widget-title">{{ .title }}</p>
           <p class="site-footer-widget-description">
             {{ .description | safeHTML }}
           </p>
         </div>
       </div>
       {{ end }}
-      <div class="col-lg-2 col-12">
+      <div class="col-lg-2 col-12 text-center">
         <a href="#top" class="site-footer-widget-top">
-          <img src="{{ "images/to-top.svg" | absURL }}" alt="back-to-top">
+          <img src="{{ relURL "images/to-top.svg" }}" alt="back-to-top">
           <p>
-	    {{ .Site.Params.footer.back_to_top.description | safeHTML }}
+            {{ .Site.Params.footer.back_to_top.description | safeHTML }}
           </p>
         </a>
       </div>
@@ -80,26 +80,25 @@
 
         <div id="qrcode">
           <script type="text/javascript">
-           new QRCode(document.getElementById("qrcode"), {
-             text: "{{ .Page.RelPermalink | absURL }}",
-             width: 128,
-             height: 128,
-           });
+            new QRCode(document.getElementById("qrcode"), {
+              text: "{{ .Page.RelPermalink | relURL }}",
+              width: 128,
+              height: 128,
+            });
           </script>
         </div>
       </div>
       <div class="col col-md-auto">
-        {{ .Page.RelPermalink | absURL }}
+        {{ .Page.RelPermalink | relURL }}
       </div>
     </div>
     {{ end }}
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-{{ $formhandler := resources.Get "js/formhandler.js" | minify }}
-<script src="{{ $formhandler.Permalink }}"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
 {{ $script := resources.Get "js/script.js" | minify }}
-<script src="{{ $script.Permalink }}"></script>
+<script src="{{ $script.Permalink | relURL }}"></script>
