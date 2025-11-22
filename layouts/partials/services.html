@@ -1,4 +1,4 @@
-{{ with .Site.Params.portfolio }}
+{{ with .Site.Params.services }}
   {{ if .enable }}
   <section class="site-project" id="project">
     <div class="container">
@@ -9,22 +9,22 @@
             <p>{{ .subtitle }}</p>
           </div>
         </div>
-        {{ range first 4 (where $.Site.RegularPages "Type" "portfolio") }}
+        {{ range first 4 (where $.Site.RegularPages "Type" "services") }}
         <div class="col-lg-6 col-md-10 mx-auto">
           <div class="site-project-item">
             <div class="site-project-item-thumb">
-              <img src="{{ .Params.Image | absURL }}" alt="project-thumb">
+              <img src="{{ .Params.Image | relURL }}" alt="project-thumb">
             </div>
             <div class="site-project-item-content">
               <span>{{ delimit .Params.category ", " }}</span>
               <h3>{{ .Title }}</h3>
-              <a href="{{ .Permalink }}" class="read-more">{{ .Site.Params.portfolio.view_project }}</a>
+              <a href="{{ .Permalink | relURL }}" class="read-more">{{ .Site.Params.services.view_project }}</a>
             </div>
           </div>
         </div>
         {{ end }}
         <div class="col-12 text-center text-lg-left">
-          <a href="portfolio" class="site-project-cta">{{ .Site.Params.portfolio.more_works }}</a>
+          <a href="services" class="site-project-cta">{{ .Site.Params.services.more_works }}</a>
         </div>
       </div>
     </div>

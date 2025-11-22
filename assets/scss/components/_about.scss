@@ -13,9 +13,10 @@
     flex-wrap: wrap;
   }
   &-company{
-    background: $primary-color;
+    background: $secondary-color;
     width: 40%;
     padding: 70px 38px;
+    border-radius: 10px;
     @include desktop{
       width: 100%;
       margin-bottom: 20px;

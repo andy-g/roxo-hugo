@@ -14,15 +14,15 @@
         <div class="col-lg-4 col-md-6">
           <div class="site-team-member">
             <div class="site-team-member-image">
-              <img src="{{ .image | absURL }}" alt="team-member">
+              <img src="{{ .image | relURL }}" alt="team-member">
             </div>
             <div class="site-team-member-content">
               <h3>{{ .name }}</h3>
               <p>{{ .designation }}</p>
               <ul class="site-team-member-social">
-                <li><a class="bi bi-medium" href="{{ .medium | absURL }}"></a></li>
-                <li><a class="bi bi-linkedin" href="{{ .linkedin | absURL }}"></a></li>
-                <li><a class="bi bi-instagram" href="{{ .instagram | absURL }}"></a></li>
+                <li><a class="bi bi-medium" href="{{ .medium | relURL }}"></a></li>
+                <li><a class="bi bi-linkedin" href="{{ .linkedin | relURL }}"></a></li>
+                <li><a class="bi bi-instagram" href="{{ .instagram | relURL }}"></a></li>
               </ul>
             </div>
           </div>
